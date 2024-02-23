@@ -1,0 +1,61 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.display-container {
+	display: flex;
+	margin: auto;
+}
+
+.note-display {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	margin: 0 25px;
+}
+
+.PH_circle-meter {
+  /*text-align: center;*/
+  margin-bottom: 10px;
+  /*display: inline-block;*/
+  /*height: 100px;
+  width: 100px;*/
+}
+.PH_circle-meter > svg {
+  height: 100px;
+  width: 100px;
+}
+
+.PH_circle-meter > svg > circle {
+			fill: none;
+			stroke-opacity: .3;
+			stroke-width: 5;
+			transform-origin: center center;
+			transform: rotate(-90deg);
+}
+
+.PH_circle-meter > svg > circle + circle {
+			stroke-dasharray: 1;
+			stroke-dashoffset: .25;
+			stroke-linecap: round;
+			stroke-opacity: 1;
+}
+
+.circle-meter.animatable > svg > circle + circle {
+	transition: stroke-dashoffset 3s ease;
+}
+
+
+.note-display:nth-child(1) > .PH_circle-meter > svg { stroke: rgb(0, 76, 255); }
+
+.note-display:nth-child(2) > .PH_circle-meter > svg { stroke: #f0a; }
+
+.note-display:nth-child(3) > .CircleStrokeMeter > svg { stroke: #a0f; }
+.note-display:nth-child(4) > .CircleStrokeMeter > svg { stroke: #0af; }
+
+.note-display > button {
+	line-height: 2;
+	padding: 0 1em;
+}
