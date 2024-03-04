@@ -1,0 +1,491 @@
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/svelte-range-slider-pips@2.2.2/dist/svelte-range-slider-pips.js"></script>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+        <!--引入Stomp -->
+<script src="https://cdn.bootcss.com/stomp.js/2.3.3/stomp.min.js"></script>
+
+<!--引入jQuery,用于Ajax请求 -->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery ajax() 方法基本用法</title>
+    <!-- 引入 jQuery 库 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>My page title</title>
+    <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One"
+    rel="stylesheet"
+    type="text/css" />
+    <html>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/test.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/meter.css')}}" />
+    <script src="{{url_for('static', filename='js/test.js')}}"></script>
+    <script src= "{{url_for('static', filename='js/jq_new.js')}}"  type ="module"></script>
+    <script src= "{{url_for('static', filename='js/show2.js')}}" type ="module"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/PH_meter.css')}}" />
+    <!-- "{{url_for('static', filename='css/EC_meter.css')}}" -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/TDS_meter.css')}}" />
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/temp_meter.css')}}" />
+
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='css/EC_meter.css')}}" />
+    <!-- <div class="PH-data " id="PH"></div> -->
+
+    <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
+    <!--[if lt IE 9]>
+    <![endif]-->
+  </head>
+
+  <body>
+    
+
+      <main>     
+        <nav class="main-menu">
+          <h1>Hydropoincs</h1>
+          <!-- <img class="logo" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb" alt="" /> -->
+          <ul>
+
+            <li class="nav-item">
+              <b></b>
+              <b></b>
+              <a href="introduction.html" class="dashboard-module">
+
+                <i class="fa fa-house nav-icon"></i>
+                <span class="nav-text">Introduction</span>
+                <!-- <span class="nav-text">Live data</span> -->
+              </a>
+            </li>
+
+            <li class="nav-item active">
+              <b></b>
+              <b></b>
+              <a href="#">
+                
+                <i class="fa fa-user nav-icon"></i>
+                <!-- <i class="fa fa-house nav-icon"></i> -->
+                <span class="nav-text">Live Data</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <b></b>
+              <b></b>
+              <a href="#">
+                <i class="fa fa-calendar-check nav-icon"></i>
+                <span class="nav-text">Plan</span>
+              </a>
+            </li>
+  
+            <li class="nav-item">
+              <b></b>
+              <b></b>
+              <a href="#">
+                <i class="fa fa-person-running nav-icon"></i>
+                <span class="nav-text">LED</span>
+              </a>
+            </li>
+  
+            <li class="nav-item">
+              <b></b>
+              <b></b>
+              <a href="#">
+                <i class="fa fa-sliders nav-icon"></i>
+                <span class="nav-text">AIR</span>
+              </a>
+            </li>
+          </ul> 
+        </nav>
+
+        <section class="content">
+    <div class="left-content">
+            <div class="active-calories">
+              <div>PH</div>
+              
+              <ul class="display-container">
+                <li class="note-display">
+                  <div class="PH_circle-meter" data-score="75">
+                    <svg viewBox="0 0 100 100" width="48" height="48">
+                      <circle cx="50" cy="50" r="47.5" class=""/>
+                      <circle cx="50" cy="50" r="47.5" pathLength="1" class=""/>
+                    </svg>
+                    <p class="softskills-percentage">85</p>
+                  </div>
+              </li>
+            </div>
+          
+              
+
+           
+            <div class="active-calories">
+             <div>Temperature</div>
+              <ul class="display-container">
+                <li class="note-display">
+                  <div class="Temp_circle-meter" data-score="75">
+                    <svg viewBox="0 0 100 100" width="48" height="48">
+                      <circle cx="50" cy="50" r="47.5" class=""/>
+                      <circle cx="50" cy="50" r="47.5" pathLength="1" class=""/>
+                    </svg>
+                    <p class="softskills-percentage">85</p>
+                  </div>
+              </li>
+            </div>
+
+
+
+            
+            <div class="active-calories">
+              <div>TDS</div>
+              <ul class="display-container">
+                <li class="note-display">
+                  <div class="TDS_circle-meter" data-score="75">
+                    <svg viewBox="0 0 100 100" width="48" height="48">
+                      <circle cx="50" cy="50" r="47.5" class=""/>
+                      <circle cx="50" cy="50" r="47.5" pathLength="1" class=""/>
+                    </svg>
+                    <p class="softskills-percentage">85</p>
+                  </div>
+              </li>
+            </div>
+
+            
+            <div class="active-calories">
+              <div>EC</div>
+              <ul class="display-container">
+                <li class="note-display">
+                  <div class="Ec_circle-meter" data-score="75">
+                    <svg viewBox="0 0 100 100" width="48" height="48">
+                      <circle cx="50" cy="50" r="47.5" class=""/>
+                      <circle cx="50" cy="50" r="47.5" pathLength="1" class=""/>
+                    </svg>
+                    <p class="softskills-percentage">85</p>
+                  </div>
+              </li>
+            </div>
+          
+
+           <div class="dashboard-heading">
+            <div class="panel">
+            
+             
+              <div ng-app="app" ng-controller="coin">
+            </div>
+          
+    
+    
+          <div class="all">
+              <div class="starter-stats">
+                  <div class="clear">
+                      <div class="gains">
+                          <div class="clear">
+                              <div class="card-grid">
+                                  <div class="card-grid">
+                                      <div class="card">
+                                          <div class="grid">
+                                              <section>
+                                                  <div class="gains">
+                                                      <div class="text_title">
+                                                      </div>
+                                                      <div class="card-grid">
+                                                          <div id="chart">
+                                                              <H1>PH</H1>
+                                                              <script src="https://code.highcharts.com/stock/highstock.js"></script>
+                                                              <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+                                                              <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+                                                              <div id="container" style="height: 400px; min-width: 200  px"></div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </section>
+                                          </div>
+                                          <p class="state"> <span id="sliderValue1"></span></p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+ 
+
+    
+    
+
+
+          <div class="all_2">
+              <div class="starter-stats">
+                  <div class="clear">
+                      <div class="gains">
+                          <div class="clear">
+                              <div class="card-grid">
+                                  <div class="card-grid">
+                                      <div class="card">
+                                          <div class="grid">
+                                              <section>
+                                                  <div class="gains">
+                                                      <div class="text_title">
+                                                      </div>
+                                                      <div class="card-grid">
+                                                          <div id="chart">
+                                                              <H1>Temperature</H1>
+                                                              <script src="https://code.highcharts.com/stock/highstock.js"></script>
+                                                              <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+                                                              <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+                                                              <div id="container_2" style="height: 400px; min-width: 200  px"></div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </section>
+                                          </div>
+                                          <p class="state"> <span id="sliderValue1"></span></p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          
+            </div>
+         
+        
+   
+      
+                
+
+
+        
+        <div class="all_2">
+          <div class="starter-stats">
+              <div class="clear">
+                  <div class="gains">
+                      <div class="clear">
+                          <div class="card-grid">
+                              <div class="card-grid">
+                                  <div class="card">
+                                      <div class="grid">
+                                          <section>
+                                              <div class="gains">
+                                                  <div class="text_title">
+                                                  </div>
+                                                  <div class="card-grid">
+                                                      <div id="chart">
+                                                          <H1>Do</H1>
+                                                          <script src="https://code.highcharts.com/stock/highstock.js"></script>
+                                                          <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+                                                          <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+                                                          <div id="container_3" style="height: 400px; min-width: 200  px"></div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </section>
+                                      </div>
+                                      <p class="state"> <span id="sliderValue1"></span></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      
+        </div>
+    
+    
+
+    
+                
+
+    
+    <div class="all_4">
+      <div class="starter-stats">
+          <div class="clear">
+              <div class="gains">
+                  <div class="clear">
+                      <div class="card-grid">
+                          <div class="card-grid">
+                              <div class="card">
+                                  <div class="grid">
+                                      <section>
+                                          <div class="gains">
+                                              <div class="text_title">
+                                              </div>
+                                              <div class="card-grid">
+                                                  <div id="chart">
+                                                      <H1>EC</H1>
+                                                      <script src="https://code.highcharts.com/stock/highstock.js"></script>
+                                                      <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+                                                      <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+                                                      <div id="container_4" style="height: 400px; min-width: 200  px"></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </section>
+                                  </div>
+                                  <p class="state"> <span id="sliderValue1"></span></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+ 
+
+
+
+
+   
+<!-- 
+<div class="all_5">
+  <div class="starter-stats">
+      <div class="clear">
+          <div class="gains">
+              <div class="clear">
+                  <div class="card-grid">
+                      <div class="card-grid">
+                          <div class="card">
+                              <div class="grid">
+                                  <section>
+                                      <div class="gains">
+                                          <div class="text_title">
+                                          </div>
+                                          <div class="card-grid">
+                                              <div id="chart">
+                                                  <H1>Power</H1>
+                                                  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+                                                  <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+                                                  <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+                                                  <div id="container_6" style="height: 400px; min-width: 200  px"></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </section>
+                              </div>
+                              <p class="state"> <span id="sliderValue1"></span></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+</div>
+</div> -->
+
+
+
+
+
+</div>
+
+<div class = "right-contect">
+   
+
+
+  <div class="all_5">
+    <div class="starter-stats">
+        <div class="clear">
+            <div class="gains">
+                <div class="clear">
+                    <div class="card-grid">
+                        <div class="card-grid">
+                            <div class="card">
+                                <div class="grid">
+                                    <section>
+                                        <div class="gains">
+                                            <div class="text_title">
+                                            </div>
+                                            <div class="card-grid">
+                                                <div id="chart">
+                                                    <H1>Power</H1>
+                                                    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+                                                    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+                                                    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+                                                    <div id="container_6" style="height: 400px; min-width: 200  px"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <p class="state"> <span id="sliderValue1"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  </div>
+  </div>
+  <button id="getDataButton">获取数据</button>
+  <button id="getDataButton"></button>
+  <button id="getDataButton"></button>
+  <button id="getDataButton"></button>  
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- <button id="getDataButton">获取数据</button> -->
+
+</main>
+</body>
+    
+  
+
+      
+
+<!-- {{url_for('static', filename='js/Temp_meter.js')}} -->
+      <script src= "{{url_for('static', filename='js/PH_meter.js')}}" type ="module"></script>
+      <script src= "{{url_for('static', filename='js/Temp_meter.js')}}"type ="module"></script>
+      
+      <!-- {{url_for('static', filename='js/chart_temp.js')}} -->
+     
+      <script src="{{url_for('static', filename='js/chart_power.js')}}" type ="module"></script>
+       
+      <script src="{{url_for('static', filename='js/TDS_mete.js')}}" type ="module"></script>
+      <script src="{{url_for('static', filename='js/EC_mete.js')}}" type ="module"></script>
+      <script src="{{url_for('static', filename='js/mete.js')}}"></script>
+      <!-- <script src="test/chart_4.js"></script> -->
+      <!-- <script src="test/chart_3.js"></script> -->
+      <script src="{{url_for('static', filename='js/chart_Ec_test.js')}}"  type ="module"></script>
+      <script src="{{url_for('static', filename='js/chart_temp.js')}}" type ="module"></script>
+      <script src="{{url_for('static', filename='js/chart_tds.js')}}" type ="module"></script>
+      <script src="{{url_for('static', filename='js/chart.js')}}" type ="module"></script>
+
+      </body>
+
+
+
+ 
+              </html>
+
+
+
+
+
+
+<!-- <link rel="stylesheet" href="{{url_for('static', filename='css/pizza.css')}}"> -->

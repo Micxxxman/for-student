@@ -1,0 +1,104 @@
+
+
+
+
+
+var co2;
+function isJSON(str) {
+    try {
+        return (JSON.parse(str) && !!str);
+    } catch (e) {
+        return false;
+    }
+}
+//
+
+
+
+var settingJson;
+var JsonObj;
+var x;
+var y =100;
+export function Temp_data_chart_t(Temp){
+  y =parseInt(Temp);
+}
+
+
+
+Highcharts.setOptions({
+    global: {
+      useUTC: false
+    }
+  });
+  // Create the chart
+  Highcharts.stockChart('container_3', {
+    chart: {
+      events: {
+        load: function () {
+  
+          // set up the updating of the chart each second
+          var series = this.series[0];
+          console.log(100);
+          setInterval(function () {
+             x = (new Date()).getTime(); // current time
+  
+              series.addPoint([x, y], true, true);
+              console.log("for_loop");
+          }, 
+          1000);
+        }
+      }
+    },
+  
+    rangeSelector: {
+      buttons: [{
+        count: 1,
+        type: 'minute',
+        text: '1M'
+      }, 
+      {
+        count: 5,
+        type: 'minute',
+        text: '5M'
+      }, 
+      
+      {
+        type: 'all_3',
+        text: 'All_3'
+      }
+    ],
+      inputEnabled: false,
+      selected: 0
+    },
+  
+    title: {
+      text: 'Live data'
+    },
+  
+    exporting: {
+      enabled: false
+    },
+  
+    series: [{
+      name: 'DO data',
+      data: (
+        function () 
+        {
+        // generate an array of random data
+        var data = [],
+          time = (new Date()).getTime(),
+          
+          i;
+        for (i = -99999; i <= 0; i += 1) {
+          data.push([time + i * 1000, Math.round(1 * 100)]);
+          console.log("for_loop");
+        }
+        return (data);
+        }
+        ())
+        }]
+        });
+
+
+
+  
