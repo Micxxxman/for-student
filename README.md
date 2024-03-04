@@ -2,7 +2,6 @@
 Python Flask, HTML, CSS, JS / Restaurant website
 <br/><br/><br/>
 
-Pizza Bubonja's is not a real restaurant. This website is part of my portfolio and is completely fictional.
 
 Run the following commands in your terminal to run this flask application:
 
