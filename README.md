@@ -13,10 +13,12 @@ pip install Flask
 pip install -r requirements.txt <br/>
 python app.py <br/>
 
+
+![螢幕截圖 2024-03-04 下午2 48 25](https://github.com/Micxxxman/for-student/assets/82942566/908161cc-3afe-4d73-a711-9e0faf213c13)
+
 Navigate to http://127.0.0.1:5000 in a browser and that's it! Don't forget to type your Gmail username and password in the appropriate text files.
 
 
+<img width="1383" alt="螢幕截圖 2024-03-04 下午2 52 59" src="https://github.com/Micxxxman/for-student/assets/82942566/65910ea7-c2fc-42c5-a5b7-fc705542fb2c">
 
 
-![Uploading 螢幕截圖 2024-03-04 下午2.48.25.png…]()
-<img width="1070" alt="螢幕截圖 2024-03-04 上午10 19 31" src="https://github.com/Micxxxman/for-student/assets/82942566/4eb4d048-e9b3-41ce-aac2-ac7dae6873db">
