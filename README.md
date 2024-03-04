@@ -19,3 +19,4 @@ Navigate to http://127.0.0.1:5000 in a browser and that's it! Don't forget to ty
 
 
 ![Uploading 螢幕截圖 2024-03-04 下午2.48.25.png…]()
+<img width="1070" alt="螢幕截圖 2024-03-04 上午10 19 31" src="https://github.com/Micxxxman/for-student/assets/82942566/4eb4d048-e9b3-41ce-aac2-ac7dae6873db">
