@@ -1,4 +1,5 @@
-Hydroponics
+#Hydroponics
+
 This project is for the Hong Kong University of Science and Technology (HKUST) students to study and devepol solar energy applications. On the other hand, they will explore the cost-effectiveness of Smart Agriculture under solar energy. As for the program design, I would like to have a three-part 
 The first part is local control which is PLC control, which directly controls the LIGHT, AIR, and WATER, and also monitors the sensor data.
 The second part cloud control provides a simple interface for remote control and testing the device
