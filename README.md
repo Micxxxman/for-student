@@ -7,4 +7,4 @@ Three parts of the server control. In this project, there are the block end is d
 
 ![sm_5acd1797b5783](https://github.com/Micxxxman/for-student/assets/82942566/3ac31621-57af-4523-a9db-ba01730e51af)
 
-
+![do-ajax-and-other-jquery-tasks](https://github.com/Micxxxman/for-student/assets/82942566/0394fa7d-7d5c-4b8b-8a7c-ae4b2f71a6bf)
