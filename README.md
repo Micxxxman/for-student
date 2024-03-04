@@ -6,3 +6,5 @@ The second part cloud control provides a simple interface for remote control and
 Three parts of the server control. In this project, there are the block end is designed by Python. The communication way is jQuery Ajax which is provided by the NEPTUNE Cloud API
 
 ![sm_5acd1797b5783](https://github.com/Micxxxman/for-student/assets/82942566/3ac31621-57af-4523-a9db-ba01730e51af)
+
+
